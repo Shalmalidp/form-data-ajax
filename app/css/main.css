@@ -1,0 +1,30 @@
+.myForm {
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid #cbcbcb;
+  border-radius: 3px;
+  padding: 25px; }
+
+.formElement {
+  position: relative;
+  margin-bottom: 15px; }
+  .formElement input {
+    color: #acb5bd;
+    border: 1px solid #cbd0d2;
+    border-radius: 3px;
+    padding: 3px 5px 3px 25px;
+    width: 420px; }
+  .formElement textarea {
+    width: 420px;
+    padding: 3px 5px 3px 25px;
+    height: 100px;
+    border: 1px solid #cbd0d2;
+    border-radius: 3px; }
+  .formElement i {
+    font-size: 11px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    color: green; }
+
+/*# sourceMappingURL=main.css.map */

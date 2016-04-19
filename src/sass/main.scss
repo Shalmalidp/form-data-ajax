@@ -1,0 +1,41 @@
+.myForm {
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid rgba(203, 203, 203, 1);
+  border-radius: 3px;
+  padding: 25px;
+
+  .formInner {
+  }
+}
+
+.formElement {
+  position: relative;
+  margin-bottom: 15px;
+
+  input {
+    color: rgba(172, 181, 189, 1);
+    border: 1px solid rgba(203, 208, 210, 1);
+    border-radius: 3px;
+    padding: 3px 5px 3px 25px;
+    width: 420px;
+  }
+
+  textarea {
+    width: 420px;
+    padding: 3px 5px 3px 25px;
+    height: 100px;
+    border: 1px solid rgba(203, 208, 210, 1);
+    border-radius: 3px;
+  }
+
+  i {
+    font-size: 11px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    color: green;
+  }
+
+
+}
