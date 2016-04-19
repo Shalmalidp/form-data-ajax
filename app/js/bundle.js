@@ -9851,30 +9851,20 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _templatesInputTemplate = require('./templates/input-template');
+
+var _templatesInputTemplate2 = _interopRequireDefault(_templatesInputTemplate);
+
+var _templatesTextareaTemplate = require('./templates/textarea-template');
+
+var _templatesTextareaTemplate2 = _interopRequireDefault(_templatesTextareaTemplate);
+
+var _templatesSelectTemplate = require('./templates/select-template');
+
+var _templatesSelectTemplate2 = _interopRequireDefault(_templatesSelectTemplate);
+
 var url = 'http://json-data.herokuapp.com/forms';
 var formArea = (0, _jquery2['default'])('.formInner');
-
-// Text Input Template
-function input(obj) {
-  return '\n    <div class="formElement" id="' + obj.id + '">\n      <input type="' + obj.type + '" placeholder="' + obj.label + '">\n      <i class="fa ' + obj.icon + '"></i>\n    </div>\n  ';
-}
-
-// Textarea Template
-function textarea(obj) {
-  return '\n    <div class="formElement" id="' + obj.id + '">\n      <textarea placeholder="' + obj.label + '"></textarea>\n      <i class="fa ' + obj.icon + '"></i>\n    </div>\n  ';
-}
-
-// Select Input Template
-function select(obj) {
-
-  var options = '';
-
-  obj.options.forEach(function (option) {
-    options += '<option value="' + option.value + '">' + option.label + '</option>';
-  });
-
-  return '\n    <div class="formElement" id="' + obj.id + '">\n      <select>\n        <option>' + obj.label + '</option>\n        ' + options + '\n      </select>\n    </div>\n  ';
-}
 
 // Make My Request
 // When it succedes, call my Build Form Function
@@ -9887,18 +9877,67 @@ dataReq.then(function (res) {
   formArr.forEach(function (field) {
 
     if (field.type === 'textarea') {
-      var html = textarea(field);
+      var html = (0, _templatesTextareaTemplate2['default'])(field);
     } else if (field.type === 'select') {
-      var html = select(field);
+      var html = (0, _templatesSelectTemplate2['default'])(field);
     } else {
-      var html = input(field);
+      var html = (0, _templatesInputTemplate2['default'])(field);
     }
 
     formArea.append(html);
   });
 });
 
-},{"jquery":1}]},{},[2])
+},{"./templates/input-template":3,"./templates/select-template":4,"./templates/textarea-template":5,"jquery":1}],3:[function(require,module,exports){
+// Text Input Template
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function input(obj) {
+  return "\n    <div class=\"formElement\" id=\"" + obj.id + "\">\n      <input type=\"" + obj.type + "\" placeholder=\"" + obj.label + "\">\n      <i class=\"fa " + obj.icon + "\"></i>\n    </div>\n  ";
+}
+
+exports["default"] = input;
+module.exports = exports["default"];
+
+},{}],4:[function(require,module,exports){
+// Select Input Template
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+function select(obj) {
+
+  var options = '';
+
+  obj.options.forEach(function (option) {
+    options += '<option value="' + option.value + '">' + option.label + '</option>';
+  });
+
+  return '\n    <div class="formElement" id="' + obj.id + '">\n      <select>\n        <option>Pick Yo Language Fool</option>\n        ' + options + '\n      </select>\n    </div>\n  ';
+}
+
+exports['default'] = select;
+module.exports = exports['default'];
+
+},{}],5:[function(require,module,exports){
+// Textarea Template
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function textarea(obj) {
+  return "\n    <div class=\"formElement\" id=\"" + obj.id + "\">\n      <textarea placeholder=\"" + obj.label + "\"></textarea>\n      <i class=\"fa " + obj.icon + "\"></i>\n    </div>\n  ";
+}
+
+exports["default"] = textarea;
+module.exports = exports["default"];
+
+},{}]},{},[2])
 
 
 //# sourceMappingURL=bundle.js.map
